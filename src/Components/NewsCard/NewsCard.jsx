@@ -2,6 +2,7 @@ import React from "react";
 import { format } from "date-fns";
 import { FaStar, FaEye, FaRegBookmark } from "react-icons/fa";
 import { IoShareSocial } from "react-icons/io5";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   return (
@@ -48,10 +49,10 @@ const NewsCard = ({ news }) => {
       {/* Details */}
       <div className="px-4 py-3 text-sm text-gray-600 border-b-2 mb-3">
         {news.details.slice(0, 160)}...
-        <span className="text-red-500 cursor-pointer hover:underline font-medium">
+        <Link to={`/detailNews/${news.id}`} className="text-red-500 cursor-pointer hover:underline font-medium">
           {" "}
           Read More
-        </span>
+        </Link>
       </div>
 
       {/* Rating + Views */}
